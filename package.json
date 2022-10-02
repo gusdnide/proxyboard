@@ -2,7 +2,14 @@
   "name": "proxyboard",
   "version": "1.0.0",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "grab": "python scrape.py"
+  },
   "repository": "https://github.com/gusdnide/proxyboard.git",
   "author": "gusdnide <gusdnide@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "signale": "^1.4.0"
+  }
 }
