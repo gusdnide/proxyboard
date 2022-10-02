@@ -12,7 +12,7 @@
 # as the root user. Either the user or group name or the UID or GID
 # number may be used.
 #
-User billy
+User root
 Group root
 
 #
@@ -91,7 +91,7 @@ DefaultErrorFile "/usr/share/tinyproxy/default.html"
 # exclusive. If neither Syslog nor LogFile are specified, output goes
 # to stdout.
 #
-LogFile "/home/billy/Documents/tinyproxy.log"
+LogFile "tinyproxy.log"
 
 #
 # Syslog: Tell tinyproxy to use syslog instead of a logfile.  This
