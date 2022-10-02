@@ -27,14 +27,15 @@ async function main() {
         let [host, port] = proxie.trim().split('//')[1].split(':')
         count[scheema] += 1
         Debug.success(scheema, host, port)
-        fs.appendFileSync('tiny.conf', `upstream	http	${host}:${port}\n`);
+        fs.appendFileSync('tiny.conf', `upstream http ${host}:${port} "."\n`);
         //Debug.success(proxie)
     });
     checker.on('exit', function (code) {
         Debug.info(count)
         spawn('pkill', ['tinyproxy']);
         spawn('tinyproxy', "-c tiny.conf".split(' '));
+        setTimeout(main, 1000 * 60 * 60)
     });
 }
 
-main().then(r => {setInterval(main, 1000 * 60 * 60)})
+main()
